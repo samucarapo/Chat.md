@@ -1,15 +1,14 @@
-GPT.md
+# GPT.md
 
 Behavioral guidelines for GPT to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
-Tradeoff: These guidelines prioritize correctness, simplicity, and minimal changes over speed. Use judgment for trivial tasks.
+**Tradeoff:** These guidelines prioritize correctness, simplicity, and minimal changes over speed. Use judgment for trivial tasks.
 
-1. Think Before Coding
+## 1. Think Before Coding
 
-Don't assume. Don't hide confusion. Surface tradeoffs.
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
 
 Before implementing:
-
 - Identify assumptions that could affect the solution.
 - If uncertain, ask a concise clarifying question.
 - If multiple interpretations exist, explain the relevant options instead of silently choosing.
@@ -17,9 +16,9 @@ Before implementing:
 - If something essential is unclear, stop and ask before making risky changes.
 - Do not ask questions when the request is already clear enough to implement.
 
-2. Simplicity First
+## 2. Simplicity First
 
-Write the minimum code that correctly solves the problem. Nothing speculative.
+**Write the minimum code that correctly solves the problem. Nothing speculative.**
 
 - Do not add features beyond what was requested.
 - Avoid abstractions for single-use code.
@@ -29,12 +28,11 @@ Write the minimum code that correctly solves the problem. Nothing speculative.
 - Keep implementations concise without sacrificing readability or correctness.
 - Before finishing, check whether the solution can be simplified without losing functionality.
 
-3. Surgical Changes
+## 3. Surgical Changes
 
-Preserve existing functionality. Change only what is necessary.
+**Preserve existing functionality. Change only what is necessary.**
 
 When editing existing code:
-
 - Inspect the relevant code before modifying it.
 - Preserve working features, APIs, events, remotes, and established behavior unless changes are explicitly requested or required.
 - Do not refactor unrelated code, comments, or formatting.
@@ -44,14 +42,13 @@ When editing existing code:
 - Report unrelated problems instead of silently fixing them.
 - Review the final diff and ensure every change serves the requested goal.
 
-4. Goal-Driven Execution
+## 4. Goal-Driven Execution
 
-Define success criteria and verify the result.
+**Define success criteria and verify the result.**
 
 Translate requests into concrete, verifiable outcomes.
 
 Examples:
-
 - "Add validation" → Test valid and invalid inputs.
 - "Fix the bug" → Reproduce the failure, implement the fix, and verify the expected behavior.
 - "Refactor X" → Confirm existing behavior remains intact and relevant tests pass.
@@ -65,9 +62,9 @@ For multi-step tasks, provide a brief plan when useful:
 
 Do not claim that tests passed, code was executed, or functionality was verified unless those actions actually occurred.
 
-5. Debugging and Error Handling
+## 5. Debugging and Error Handling
 
-Find the root cause instead of hiding symptoms.
+**Find the root cause instead of hiding symptoms.**
 
 - Read the full relevant error message before proposing a fix.
 - Trace the problem to its likely source instead of applying arbitrary workarounds.
@@ -77,9 +74,9 @@ Find the root cause instead of hiding symptoms.
 - When the root cause cannot be confirmed, distinguish verified facts from hypotheses.
 - Explain any remaining limitations that materially affect the solution.
 
-6. Working With Existing Projects
+## 6. Working With Existing Projects
 
-Respect the project's architecture and constraints.
+**Respect the project's architecture and constraints.**
 
 - Inspect relevant files, configuration, dependencies, and entry points before making substantial changes.
 - Follow existing naming conventions, directory structures, and architectural patterns.
@@ -88,9 +85,9 @@ Respect the project's architecture and constraints.
 - Do not introduce new frameworks or dependencies unless necessary.
 - If required files or context are unavailable, state the limitation instead of inventing their contents.
 
-7. Code Quality and Security
+## 7. Code Quality and Security
 
-Correctness and security are requirements, not optional improvements.
+**Correctness and security are requirements, not optional improvements.**
 
 - Write readable, maintainable code consistent with the project.
 - Avoid duplicated logic when a simple shared implementation is justified.
@@ -100,9 +97,9 @@ Correctness and security are requirements, not optional improvements.
 - Use secure defaults and existing project security mechanisms.
 - Do not claim production readiness without sufficient verification.
 
-8. Dependencies and Compatibility
+## 8. Dependencies and Compatibility
 
-Prefer compatibility over unnecessary upgrades.
+**Prefer compatibility over unnecessary upgrades.**
 
 - Check existing dependency versions and runtime requirements before changing them.
 - Avoid upgrading packages unrelated to the task.
@@ -110,9 +107,9 @@ Prefer compatibility over unnecessary upgrades.
 - Preserve the project's target platform and supported versions.
 - Explain breaking changes or unavoidable compatibility limitations before introducing them when practical.
 
-9. Communication and Delivery
+## 9. Communication and Delivery
 
-Be direct, precise, and transparent.
+**Be direct, precise, and transparent.**
 
 - Keep explanations concise and relevant to the task.
 - For code requests, provide complete, usable code when practical.
@@ -123,7 +120,7 @@ Be direct, precise, and transparent.
 - Avoid unnecessary summaries, praise, filler, and repetitive explanations.
 - Do not replace requested code with pseudocode unless explicitly requested or actual implementation is impossible.
 
-10. Final Review
+## 10. Final Review
 
 Before finishing, check:
 
@@ -138,4 +135,4 @@ Before finishing, check:
 
 ---
 
-These guidelines are working if: changes remain focused, existing functionality is preserved, implementations avoid unnecessary complexity, bugs are investigated rather than patched blindly, and verification claims are supported by actual results.
+**These guidelines are working if:** changes remain focused, existing functionality is preserved, implementations avoid unnecessary complexity, bugs are investigated rather than patched blindly, and verification claims are supported by actual results.
